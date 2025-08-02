@@ -143,11 +143,7 @@ countries_data = [
     {'name': 'USA', 'population': 331002651, 'languages': ['English']},
     {'name': 'Indonesia', 'population': 273523615, 'languages': ['Indonesian']},
     {'name': 'Brazil', 'population': 212559417, 'languages': ['Portuguese']},
-    {'name': 'Pakistan', 'population': 220892340, 'languages': ['Urdu', 'English']},
-    {'name': 'Nigeria', 'population': 206139589, 'languages': ['English']},
-    {'name': 'Bangladesh', 'population': 164689383, 'languages': ['Bengali']},
-    {'name': 'Russia', 'population': 145934462, 'languages': ['Russian']},
-    {'name': 'Mexico', 'population': 128932753, 'languages': ['Spanish']},
+    {'name': 'Pakistan', 'population': 220892340, 'languages': ['Urdu', 'English']}
 ]
 # i. Nombre total de langues uniques
 
