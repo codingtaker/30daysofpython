@@ -170,3 +170,48 @@ def get_last_ten_countries(countries):
 print(get_last_ten_countries(long_list))
 print()
 
+"""
+
+Exercices 3:
+
+"""
+# Importer les données des pays
+print("Exercice 3: Importer les données des pays")
+
+from collections import Counter
+
+# Import countries_data from the correct module
+from Day_14.countriesdata import countries_data
+
+# 1. Sort countries by name
+print("1. Countries sorted by name:")
+sorted_by_name = sorted(countries_data, key=lambda c: c["name"])
+for country in sorted_by_name[:5]:
+    print(f"   {country['name']}")
+
+# 2. Sort countries by capital
+print("\n2. Countries sorted by capital:")
+sorted_by_capital = sorted(countries_data, key=lambda c: c.get("capital", ""))
+for country in sorted_by_capital[:5]:
+    print(f"   {country['name']} - {country.get('capital', 'N/A')}")
+
+# 3. Sort countries by population (descending)
+print("\n3. Countries sorted by population (descending):")
+sorted_by_population = sorted(countries_data, key=lambda c: c["population"], reverse=True)
+
+# 4. Get top 10 most spoken languages by number of countries where they appear
+print("\n4. Top 10 most spoken languages by location:")
+language_counter = Counter()
+for country in countries_data:
+    for lang in country["languages"]:
+        language_counter[lang] += 1
+
+most_spoken_languages = language_counter.most_common(10)
+for i, (language, count) in enumerate(most_spoken_languages, 1):
+    print(f"   {i}. {language}: {count} countries")
+
+# 5. Get top 10 most populated countries
+print("\n5. Top 10 most populated countries:")
+top_10_populated = sorted_by_population[:10]
+for i, country in enumerate(top_10_populated, 1):
+    print(f"   {i}. {country['name']}: {country['population']:,}")
